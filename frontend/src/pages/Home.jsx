@@ -78,7 +78,7 @@ const Home = () => {
     const handleDestinationChange = async (e) => {
         setDestination(e.target.value)
         try {
-            const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/maps/get-suggestions`, {
+            const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/maps/get-suggestions`, {
                 params: { input: e.target.value },
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('token')}`

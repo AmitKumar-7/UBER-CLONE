@@ -68,7 +68,7 @@ const LiveTracking = () => {
                 mapContainerStyle={containerStyle}
                 center={currentPosition}
                 zoom={15}
-                mapId={import.meta.env.VITE_GOOGLE_MAPS_MAP_ID}
+                mapId={import.meta.env.VITE_GOOGLE_MAPS_MAP_ID || undefined}
                 options={{
                     disableDefaultUI: false,
                     clickableIcons: false,

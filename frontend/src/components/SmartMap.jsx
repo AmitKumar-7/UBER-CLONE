@@ -7,8 +7,12 @@ const SmartMap = (props) => {
                      import.meta.env.VITE_GOOGLE_MAPS_API_KEY !== 'your_google_maps_api_key_here' &&
                      import.meta.env.VITE_GOOGLE_MAPS_API_KEY !== 'YOUR_GOOGLE_MAPS_API_KEY';
 
-    // If API key is available, use real Google Maps
-    if (hasApiKey) {
+    const hasMapId = import.meta.env.VITE_GOOGLE_MAPS_MAP_ID &&
+                    import.meta.env.VITE_GOOGLE_MAPS_MAP_ID !== 'your_google_maps_map_id_here' &&
+                    import.meta.env.VITE_GOOGLE_MAPS_MAP_ID !== 'YOUR_GOOGLE_MAPS_MAP_ID';
+
+    // Only use real Google Maps if both API key and Map ID are available
+    if (hasApiKey && hasMapId) {
         return <LiveTracking {...props} />;
     }
 
